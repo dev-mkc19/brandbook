@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+    <head>
+        <title> </title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+
+    </head>
+<body>
+
+  <h2>File Upload & Image Preview</h2>
+  <p class="lead">No Plugins <b>Just Javascript</b></p>
+
+  <!-- Upload  -->
+  <form id="file-upload-form" class="uploader" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input id="file-upload" type="file" name="fileUpload" />
+
+    <label for="file-upload" id="file-drag">
+
+      <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        <div>Select a file or drag here</div>
+
+        <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+      </div>
+    </label>
+    <button class="btn" type="submit" name="button">Загрузить</button>
+  </form>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="{% static 'js/upload.js' %}"></script>
+</body>
+</html>

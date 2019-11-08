@@ -1,0 +1,33 @@
+.steps {
+    margin-top: 80px;
+    }
+.validation-list {
+    padding-left: 0;
+    display: inline-block;
+    width: auto;
+    }
+
+.validation-list li {
+    margin-bottom: 0.25em;
+    font-size: 20px;
+    color: #3A3D41;
+    list-style-type: none;
+    }
+
+.validation-list i {
+    opacity: 1;
+    color: #6FB536;
+    margin-right: 12px;
+    }
+
+.error-list {
+    font-size: 10px;
+    margin-bottom: 50px;
+    }
+
+.error-list li {
+    font-size: 14px;
+    color: #737A82;
+    margin-left: 25px;
+    list-style-type: disc;
+    }

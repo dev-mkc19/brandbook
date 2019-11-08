@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+  </head>
+  <body>
+    <div class="steps">
+     <div class="container">
+       <div class="row">
+         <div class="col-sm-12 text-center">
+           <ul class="validation-list text-left" >
+            {% for key, value in data.items %}
+              {% if value == None %}
+                <li><i class="icon-chevron-sign-down"></i><span>{{ key }}</span></li>
+              {% else %}
+                <li><i class="icon-exclamation-sign" style="color: #CC463D;"></i><span>{{ key }}</span>
+                <ul class="error-list" >
+                  {% for error in value %}
+                    <li>{{ error }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
+           </div>
+         </div>
+       </div>
+     </div>
+  </body>
+</html>
